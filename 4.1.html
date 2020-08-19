@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    let grade = 85
+     function grading(grade){
+      
+       if (grade <= 64){
+          return  `"F"`;
+       }else if (65 <= grade && grade <= 69){
+          return `"D"`;
+       }else if (70 <= grade && grade <= 79){
+          return `"C"`;
+       }else if (80 <= grade && grade <= 89){
+          return `"B"`;
+       }else if (90 <= grade && grade <= 100){
+          return `"A"`;
+       }
+    
+    }
+   console.log(grading(grade));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////4.2///////////////////////////////////////
+  let avgJohn = 0;
+
+  let teamJohnarray = [119 , 121, 103];
+   for (let i =0 ; i < teamJohnarray.length; i++){
+     avgJohn += teamJohnarray[i];
+    
+   }
+  avgJohn = avgJohn / teamJohnarray.length
+  console.log(avgJohn )
+  let avgMike = 0;
+
+  let teamMikearray = [116 , 94, 123];
+   for (let i =0 ; i < teamMikearray.length; i++){
+     avgMike += teamMikearray[i];
+    
+   }
+  avgMike = avgMike / teamMikearray.length
+  console.log(avgMike)
+
+
+ /////////////////////////////////////////////////////////////////////////4.2 extra///////////////////////////////////////////////////
+
+ let avgMary = 0;
+
+let teamMaryarray = [97 , 134, 115];
+ for (let i =0 ; i < teamMaryarray.length; i++){
+   avgMary += teamMaryarray[i];
+  
+ }
+avgMary = avgMary / teamMaryarray.length
+console.log(avgMary)
+
+ if(avgMike===avgJohn || avgMike===avgMary || avgJohn===avgMary){
+  console.log(`It's a DRAW all LOSE!!!`);
+ }else if(avgMike > avgJohn && avgMike > avgMary){
+   console.log(`Mike's team is the WINER!!!`);
+  }else if (avgMike < avgJohn && avgJohn > avgMary) {
+     console.log(`John's team is the WINER!!!`);
+   }else if(avgMary > avgJohn && avgMary > avgMike){
+   console.log(`Mary's team is the WINER!!!`);
+  }
+  // --------------------------------------------------------------4.3------------------------
+  let year = '';
+
+
+
+  function leapYear(year){
+    if (((year % 4) === 0) && ((year % 100) !== 0) || ((year % 4 ) === 0) && ((year % 400 ) === 0)){ 
+      return `it's a leap year!`;
+    }else{
+      return `it's not a leap year!!!`;
+    }  
+     
+  }
+  console.log(leapYear(2012)); 
+
+  //------------------------------------------------------------4/4--------------------------------------------
+
+
+function is7Boom(n){
+
+  for (let i = 0; i < n; i++) {
+    if (i % 7 !==0){
+        console.log(i);
+      }else if(i===7) {
+        console.log(`BooM! Boom!`) ;
+      }else if(i % 7 === 0 ) {
+        console.log(`BooM`);
+      }
+      
+  }
+}  
+  console.log(is7Boom(50 + 1));
+  </script>
+</body>
+</html>

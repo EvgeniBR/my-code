@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj1={};
+    //-----object------//
+    obj1={
+      name: `marcus`,
+      age: 346,
+    }
+     //-----map------//
+    const myMap = new Map();
+    myMap.set(`Marcus`, 346)
+    myMap.set(`Lilith`, 743)
+
+     //-----Array------//
+   
+     let array = [`string1`,`string2`,`string3`,`string4`,`string5`,`string6`,`string7`,`string8`,`string9`,`string10`,] 
+
+
+     //-----map itaration------// 
+    for (const [element , age] of myMap){
+      console.log(element , age);
+    }
+          //-----object itaration------// 
+    for (const name in obj1) {
+      console.log(`${name}: ${obj1[name]}`);
+    }
+       //-----array itaration------// 
+    for (const string of array){
+      console.log(string);
+    }
+  </script>
+</body>
+</html>

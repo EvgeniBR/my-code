@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let word=``;
+    let pass = `admin1234`;
+    if (pass.length <= 7){
+      console.log(`Weak`);
+
+    }else{
+      console.log(`strong`);
+    }
+
+word = pass.length<=7 ? `weak` : `strong`;
+console.log(word)
+
+
+
+
+
+const password = (pass) => {
+  return pass.length > 7 && /[A-Z]/.test(pass)
+  ?"very strong"
+  : pass.length >7
+  ? "strong"
+  :"weak";
+};
+
+
+//---------------------------------5.2-----------------------------------//
+
+let color1 = prompt("Enter a color?");
+let color = color1.toLowerCase();
+switch (color) {
+  case 'yellow':
+  case 'pink':
+  case 'orange':
+    console.log( 'light color' );
+  
+    break;
+
+  case 'blue':
+  case 'purple':
+  case 'brown':
+    console.log( 'dark color' );
+  
+    break;
+
+  default:
+    console.log( 'Unknown color' );
+  
+}
+
+  </script>
+</body>
+</html>

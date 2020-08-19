@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1//
+    const people = ["Greg", "Mary", "Devon", "James"];
+    for (i=0; i<people.length; i++){
+      console.log(people[i]);
+    }
+    //2//
+    const peopleGregout=people.shift();
+    //3//
+    const peopleJamesout=people.pop();
+    //4//
+    const peopleMattin =people.unshift(`Matt`)
+    //5//
+    const peopleWithme=people.push (`Evgeni`);
+    //6//
+    const MaryIndex = people.findIndex(name =>{
+      return name ===`Mary`;
+    });
+    for (i=0; i<MaryIndex +1; i++){
+      console.log(people[i]);
+    }
+    //7//
+    console.log(people);
+    const array7 = people.slice(2)
+    console.log(array7);
+    //8//
+    // const MaryIndex = people.findIndex(name =>{
+    //   return name ===`Mary`;
+    // });
+    //9//
+    const FooIndex = people.findIndex(name =>{
+      if (name === `Foo`){
+        return true;
+      }
+      return false;
+    });
+    console.log(FooIndex);
+    //10//
+    console.log(people);
+    people.unshift(`Greg`);
+    people.push(`Elizabeth`);
+    people.push(`Artie`);
+    people.push(`James`);
+    peopleReDef = [
+    people.slice(1,2),...people
+    ]
+    console.log(peopleReDef);
+    //11//
+    const withBob = [
+      ...people , `bob`
+    ]
+  </script>
+</body>
+</html>

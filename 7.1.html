@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    const  person1={
+      name: `name1`,
+    }
+    const  person2={
+      name: `name2`,
+    }
+    const  person3={
+      name: `name3`,
+    }
+    const myMap = new Map();
+    myMap.set(person1,`1`)
+    myMap.set(person2,`2`)
+    myMap.set(person3,`3`)
+
+    for (const [firstEL, secondEL] of myMap){
+      console.log(firstEL.name + ` and the id is:` + secondEL);
+    }
+    myMap.forEach((firstEL, secondEL)=> {
+      console.log(secondEL.name + ` : ` +firstEL );
+    });
+  </script>
+  
+</body>
+</html>

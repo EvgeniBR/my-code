@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+let book1 = {
+  name : `Asignment 6.1`,
+  author : `Pini OR Michael`,
+  year : `2020`,
+
+}
+let book2 = {
+  name : `Asignment 6.2`,
+  author : `Shani`,
+  year : `2021`,
+
+}
+let bookUtils= {   }
+  bookUtils.getFirstPublished=function(book1,book2){
+    if(book1.year<book2.year){
+      return book1;
+    }else {
+      return book2;
+    }
+  }
+  bookUtils.setNewEdition=function(book1,book2){
+    return book1.newPublish = `2030` , book2.newPublish = '2030'; 
+  }
+  bookUtils.setLanguage=function(book1,language){
+    return book1.Language = language;
+  }
+  
+  bookUtils.setTranslation=function(book1,language,translated){
+    return book1.translate = `translated from ${language} to ${translated}`;
+  }
+  bookUtils.setPublisher=function(book1,newName,location){
+    return book1.publisher = {
+              pname : newName,
+              plocation : location,
+
+    }
+  }
+  bookUtils.isSamePublisher=function(book1,book2){
+    if(book1.publisher===book2.publisher){
+      return `Same Publisher!`;
+    }else {
+      return `Difrent Publishers!`;
+    }
+  }
+  
+  console.log(bookUtils.setNewEdition(book1,book2));
+  console.log(bookUtils.setLanguage(book1,`Nord`));
+  console.log(bookUtils.setTranslation(book1,`Nord`,`Hebrew`));
+  console.log(bookUtils.setPublisher(book1,`TheCountry`,`Nigeria`));
+  console.log(bookUtils.isSamePublisher(book1,book2));
+  console.log(bookUtils.getFirstPublished(book1,book2));
+  </script>
+</body>
+</html>

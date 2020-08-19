@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const array = ["Hello", "Good Day", "Your Welcome", "hotdog", "hamburgers"];
+    let counts={};
+    let stringArray = array.join("");
+    stringArray = stringArray.toLowerCase();
+    let newArray = stringArray.split('');
+    // newArray = newArray.sort();
+    console.log(stringArray);
+    console.log(newArray);
+    for (let i =0; i<newArray.length; i++){
+      if(newArray[i]== " "){
+        continue;
+      }
+    }
+    newArray.forEach((i) => (counts[i] = (counts[i])? ++counts[i] :1 ));
+    console.log(counts);
+  
+
+  </script>
+</body>
+</html>

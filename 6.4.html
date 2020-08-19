@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let cardObg={
+      jack:11,
+      queen:12,
+      king:13,
+      ace:1,
+    };
+    console.log(Object.keys(cardObg));
+    console.log(Object.values(cardObg));
+    Object.entries(cardObg).forEach(entry => {
+       console.log(entry);
+    });
+    const obj = Object.fromEntries(cardObg[key]);
+    console.log(obj);
+
+
+    // function swap(blocks){
+    //   let newCards = {};
+    //   for(const key in blocks){
+    //     newCards[blocks[key]]
+    //       newCards[blocks[key]=key]
+    //     }
+    //     return newCards
+    //   }
+    
+    // console.log(swap(cardObg));
+
+  // cardObg.enteries(cardObg).forEach(entery => {
+  //  console.log(entery);
+ 
+
+
+  </script>
+</body>
+</html>
