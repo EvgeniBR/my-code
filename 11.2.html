@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let school = {
+        teachers: [
+          {
+            name: `Doron`,
+            subjects: [`Agricalture`, `Not Important Lesson`],
+            students: [`shir`, `shira`, `shiran`],
+            capleft: 2,
+          },
+          {
+            name: `Aron`,
+            subjects: [`Gym`, `Quantum physics`, `Not Important Lesson`],
+            students: [`nir`, `nira`, `nurit`],
+            capleft: 1,
+          },
+          {
+            name: `Sharon`,
+            subjects: [`poetry`, `pottery`],
+            students: [`din`, `dina`, `dinamite`],
+            capleft: 1,
+          },
+        ],
+        students: [
+          {
+            name: `fadi`,
+            age: 14,
+          },
+          {
+            name: `hadi`,
+            age: 15,
+          },
+          {
+            name: `shadi`,
+            age: 16,
+          },
+          {
+            name: `alex`,
+            age: 15,
+          },
+        ],
+      };
+      function assignStudent(student, subject) {
+        //מוצאת סטודנת לפי הגדרה
+        let studentObj = school.students.find(
+          (studentQuaery) => (studentQuaery.name = student)
+        );
+        //   מוצא את המורה שיש לו מקום לקבל סטודנט ומלמד את המקוצע הרלוונטי והופך למערך
+        let teacherObj = school.teachers.filter(
+          (teacherQuaery) =>
+            teacherQuaery.subjects.includes(subject) &&
+            teacherQuaery.capleft > 0
+        );
+        // אם יש מורה במערך הוא מקבל סטודנט ויורד לו מקום אחד פנוי. אחרת , לא!!.1
+        if (teacherObj.length > 0) {
+          teacherObj[0].students.push(studentObj);
+          teacherObj[0].capleft--;
+        } else {
+          console.log(`No!!`);
+        }
+      }
+
+      assignStudent(`alex`, `Not Important Lesson`);
+      assignStudent(`fadi`, `Not Important Lesson`);
+      assignStudent(`hadi`, `Not Important Lesson`);
+      assignStudent(`shadi`,`Not Important Lesson`);
+      console.log(school.teachers);
+    </script>
+  </body>
+</html>
