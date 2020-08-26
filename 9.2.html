@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+      function makeRandom() {
+        return Math.floor(Math.random() * 20 )+ 1;
+      }
+      function dontKnow(num, callBack) {
+        let howMany = 0;
+        
+        while (makeRandom() !== num) {
+          howMany++;
+        
+        }
+        console.log(howMany);
+      }
+      dontKnow(15, makeRandom);
+      
+    </script>
+  </body>
+</html>

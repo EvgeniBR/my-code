@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function doMore(string){
+      console.log(` ${string}`);
+    }
+    function doStuff( string , doMore){
+      if(doMore instanceof Function){
+         doMore(string);
+      }
+       
+    }
+ doStuff('If You see this, proceed to 9.2' , doMore);
+  </script>
+  
+</body>
+</html>

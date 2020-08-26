@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = [
+        {
+          name: "John",
+          birthday: "1-1-1995",
+          favoriteFoods: {
+            meats: ["hamburgers", "sausages"],
+            fish: ["salmon", "pike"],
+          },
+        },
+        {
+          name: "Mark",
+          birthday: "10-5-1980",
+          favoriteFoods: {
+            meats: ["hamburgers", "steak", "lamb"],
+            fish: ["tuna", "salmon", "barracuda"],
+          },
+        },
+        {
+          name: "Mary",
+          birthday: "1-10-1977",
+          favoriteFoods: {
+            meats: ["ham", "chicken"],
+            fish: ["pike"],
+          },
+        },
+        {
+          name: "Thomas",
+          birthday: "1-10-1990",
+          favoriteFoods: {
+            meats: ["bird", "rooster"],
+            fish: ["salmon"],
+          },
+        },
+        {
+          name: "Mary",
+          birthday: "1-10-1977",
+          favoriteFoods: {
+            meats: ["hamburgers", "lamb"],
+            fish: ["anchovies", "tuna"],
+          },
+        },
+      ];
+
+      function nameArray(arr) {
+        return arr.map((person) => {
+          return person.name;
+        });
+      }
+      console.log(nameArray(data));
+
+      const bornArray = (arr) => {
+        return arr.map((person) => {
+          if (+person.birthday.slice(-4) < 1990) {
+            return person;
+          }
+        });
+      };
+      console.log(bornArray(data));
+
+      const food = (arr) => {
+        const obj = {};
+        arr.forEach((el) => {
+          
+          el.favoriteFoods.meats.forEach((meatitem) => {
+              return (obj[meatitem] = obj[meatitem] + 1 || 1);
+            });
+            el.favoriteFoods.fish.forEach((fishitem) => {
+              return (obj[fishitem] = obj[fishitem] + 1 || 1);
+            });
+          });
+          return obj;
+        };
+      
+      console.log(food(data));
+    </script>
+  </body>
+</html>

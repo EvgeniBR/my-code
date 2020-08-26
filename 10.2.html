@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const doubleValues = (arr)=>{
+        let duplicatedArray = [...arr];
+        console.log(duplicatedArray);
+    }
+    console.log(doubleValues([1,2,3,4,5,6]));
+// -----------------------------------------------------
+    const onlyEvenValues = (arr)=>{
+      let evenArray =arr.filter(i => i % 2 === 0 ) ;
+        console.log(evenArray);
+    }
+    console.log(onlyEvenValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]));
+// -----------------------------------------------------
+let array = [{name:`kimbo`, status:`tierd`},{name:`limbo`,status:`very tierd`}];
+    const addKeyAndValue = (arr , key , value) =>{
+      let newArray = arr.forEach(V => {V.key = value});  
+      };
+      console.log(addKeyAndValue(array , `sub_status` , `need to sleep`));
+    
+  </script>
+</body>
+</html>

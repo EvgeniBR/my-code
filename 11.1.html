@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let library = [
+        {
+          author: "Bill Gates",
+          title: "The Road Ahead",
+          readingStatus: true,
+        },
+        {
+          author: "Steve Jobs",
+          title: "Walter Isaacson",
+          readingStatus: true,
+        },
+        {
+          author: "Suzanne Collins",
+          title: "Mockingjay: The Final Book of The Hunger Games",
+          readingStatus: false,
+        },
+      ];
+
+      const filteredArray = library.filter(
+        (book) => book.readingStatus === true
+      );
+
+      console.log(filteredArray);
+      // function whatCanIREAD(arr) {
+      //   return arr.map((book) => {
+      //     if (book.readingStatus ) {
+      //       return book;
+      //     }
+      //   });
+      // }
+      // console.log(whatCanIREAD(library));
+    </script>
+  </body>
+</html>
