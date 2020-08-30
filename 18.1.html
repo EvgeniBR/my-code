@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .eror-msg {
+        display: none;
+        visibility: visible;
+      }
+      .valid-msg {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label class="head-text"
+        ><h2>How many smileys do you want to see?</h2></label
+      >
+      <input class="area" type="text" />
+      <input class="btn sub" type="submit" value="Submit" /><br />
+      <span class="message eror-msg">"YOU DID NOT ENTER A VALID NUMBER"</span>
+    </div>
+
+    <div class="smiley"></div>
+
+    <script>
+      let msgArea = document.querySelector(".message");
+      let myButton = document.querySelector(".btn");
+      let smiley = document.querySelector(".smiley");
+      const myDiv = document.createElement(`div`);
+      let myHTML = `<img src="https://i.pinimg.com/originals/f2/4c/e0/f24ce09855f117cc3d462436f3e290db.png" alt=":)">`;
+      const myFragment = document
+        .createRange()
+        .createContextualFragment(myHTML);
+      document.body.insertAdjacentElement("beforeend", myDiv);
+      function checkValue() {
+        myDiv.innerHTML = "";
+        let x = document.querySelector(".area").value;
+        if (isNaN(x)) {
+          msgArea.classList.toggle("eror-msg");
+        } else {
+          msgArea.classList.add("valid-msg");
+          for (let i = 1; i <= x; i++) {
+            myDiv.insertAdjacentHTML("afterbegin", myHTML);
+          }
+        }
+      }
+      myButton.addEventListener("click", checkValue);
+    </script>
+  </body>
+</html>

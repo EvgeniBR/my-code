@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+    <script>
+      //1
+      let title2 = document.querySelector(`.start-here`);
+      title2.textContent = `Main Title`;
+      //2
+      const myLi = document.createElement(`li`);
+      myLi.textContent = `sub title 4`;
+      title2.nextElementSibling.firstElementChild.insertAdjacentElement("beforeend" , myLi);
+      //3
+      let myList = document.querySelector(`ul`);
+      myList.lastElementChild.remove();
+      //4
+      let mainTitle = document.querySelector(`title`);
+      mainTitle.textContent = `Master Of The Dom`;
+      //5
+      let myParagraph = document.querySelector(`p`);
+      myParagraph.textContent = `Finally finished with todays work!`;
+
+    </script>
+  </body>
+</html>

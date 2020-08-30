@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .head-text {
+        font-weight: bold;
+      }
+      .btn {
+        font-weight: 550;
+      }
+      .Message{
+        color: red;
+      }
+    </style>
+  </head>
+  <form class="container">
+    <div>
+      <label class="head-text">Why are you interested in this posiotion:</label>
+    </div>
+   
+      <textarea
+        class="area"
+        rows="8"
+        cols="38"
+        placeholder="write at least 100 characters:"
+      ></textarea>
+      <br />
+      <input class="btn sub" type="submit">
+      <span class="Message"></span> </span>
+  </form>
+  <script>
+    let msg_area = document.querySelector(".Message");
+    let form = document.querySelector('.container');
+    let area = document.querySelector('.area');
+
+    function CheckLength() {
+        if (area.value.length < 100) {
+          msg_area.textContent = "YOU DID NOT ENTER ENOUGH INFORMATION";
+        } 
+    }
+    form.addEventListener('submit', CheckLength) ;
+  </script>
+  <body></body>
+</html>

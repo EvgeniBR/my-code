@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const myParagraph = document.createElement(`p`);
+    myParagraph.textContent = `training P`;
+    myParagraph.classList.add(`text-class`);
+    const myImage = document.createElement(`img`);
+    myImage.src = `https://picsum.photos/500`;
+    const myDiv = document.createElement(`div`);
+    myParagraph.classList.add(`wrapper`);
+
+
+    myDiv.appendChild(myParagraph);
+    myDiv.appendChild(myImage);
+    document.body.appendChild(myDiv);
+
+    const heading = document.createElement(`h2`);
+    heading.textContent = `My Website:`;
+    myDiv.insertAdjacentElement("afterbegin" , heading)
+
+  </script>
+</body>
+</html>

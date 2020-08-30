@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.1</title>
+    <style>
+      :root {
+        --font-size: 16px;
+      }
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rem 0;
+        margin: 2rem;
+      }
+      .green {
+        background: green;
+      }
+      .red {
+        background: red;
+      }
+      .btn {
+        font-size: 2.5rem;
+        border: 3px solid black;
+        padding: 0.5rem;
+        border-radius: 50%;
+      }
+      .btn:hover {
+        background: black;
+        color: white;
+      }
+      .text {
+        padding: 1rem 1rem;
+        font-size: var(--font-size);
+      }
+      .round {
+        background: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div>
+        <button class="btn green plus" onclick="increaseFontSizeBy1px()">
+          +
+        </button>
+      </div>
+      <div><p class="text">Test Text!!!</p></div>
+      <div><button class="minus btn red">-</button></div>
+    </div>
+
+    <script>
+      let font = 16;
+      const plus = document.querySelector(".plus");
+      const minus = document.querySelector(".minus");
+      const text = document.querySelector(".text");
+
+      function increaseFontSize() {
+        if (font < 100) {
+          font += 5;
+          text.style[`font-size`] = `${font}px`;
+        } else {
+          plus.classList.add("round");
+        }
+      }
+      function decreaseFontSize() {
+        if (font > 6) {
+          font -= 5;
+          text.style[`font-size`] = `${font}px`;
+        }plus.classList.add("round");
+      }
+      plus.addEventListener("click", increaseFontSize);
+      minus.addEventListener("click", decreaseFontSize);
+    </script>
+  </body>
+</html>

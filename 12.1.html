@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let testArray = [1, 2, 3, 4, 5, 6, 8, 10, 4, 1, 23, 45, 4];
+      function maxNum(array) {
+        let maxNumInArray = array.reduce((prevV, currentV) => {
+          return prevV > currentV ? prevV : currentV;
+        });
+        return maxNumInArray;
+      }
+      console.log(maxNum(testArray));
+
+      // ----------------------------------------------------------------------
+      // function evenNumSum(array) {
+      let evenNumSumInArray = testArray
+        .filter((e) => e % 2 === 0)
+        .reduce((prevV, currentV) => prevV + currentV);
+      // return evenNumSumInArray;
+      // }
+      console.log(evenNumSumInArray);
+      //----------------------------------------------------------------------
+      function avgOfArray(array) {
+        console.log(array.length)
+        let avgArray = array.reduce((prevV, currentV) => {
+          return prevV + currentV ;
+        });
+        return avgArray /array.length;
+      }
+      console.log(avgOfArray(testArray));
+    </script>
+  </body>
+</html>
