@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30.2</title>
+  </head>
+  <body>
+    <script>
+      const alphabetAerobics = [
+        `Artificial`,
+        `amateurs`,
+        `aren't`,
+        `at`,
+        `all`,
+        `amazing`,
+        `Analytically`,
+        `assault`,
+        `animate`,
+        `things`,
+        `Broken`,
+        `barriers`,
+        `bounded`,
+        `by`,
+        `the`,
+        `bomb`,
+        `beat`,
+        `Buildings`,
+        `are`,
+        `broken`,
+        `basically`,
+        `I'm`,
+        `bombarding`,
+        `Casually`,
+        `create`,
+        `catastrophes`,
+        `casualties`,
+        `Canceling`,
+        `cats`,
+        `got`,
+        `they`,
+        `canopies`,
+        `collapsing`,
+        `Detonate`,
+        `adime`,
+      ];
+
+      function makeAllCaps(array = []) {
+        return new Promise(function (resolve, reject) {
+          for (let i = 0; i < array.length; i++) {
+            if (isNaN(array[i]) != true) {
+              reject(`Buzzer!!!!! not a word!`);
+            }
+          }
+          resolve(`shout it: ${array.join(`,`).toUpperCase()}`);
+        });
+      }
+
+      function sortWords(array = []) {
+        return new Promise(function (resolve, reject) {
+          for (let i = 0; i < array.length; i++) {
+            if (isNaN(array[i]) != true) {
+              reject(`Buzzer!!!!! not a word!`);
+            }
+          }
+          resolve(`sort it: ${array.sort()}`);
+        });
+      }
+
+      function handleError(err) {
+        console.log("Ohh noooo!!");
+        console.log(err);
+      }
+      // makeAllCaps([alphabetAerobics, 6])
+      //   .then((num) => {
+      //     console.log(num);
+      //   })
+      //   .catch(handleError);
+      // makeAllCaps([alphabetAerobics])
+      //   .then((num) => {
+      //     console.log(num);
+      //   })
+      //   .catch(handleError);
+      // sortWords([`hi`, `bye`, `low`, `high`, 6])
+      //   .then((num) => {
+      //     console.log(num);
+      //   })
+      //   .catch(handleError);
+      // sortWords([`hi`, `bye`, `low`, `high`])
+      //   .then((num) => {
+      //     console.log(num);
+      //   })
+      //   .catch(handleError);
+
+      makeAllCaps([alphabetAerobics])
+        .then((num) => {
+          console.log(num);
+          return makeAllCaps([alphabetAerobics]);
+        })
+        .then((num) => {
+          console.log(num);
+          return sortWords([`hi`, `bye`, `low`, `high`]);
+        })
+        .then((num) => {
+          console.log(num);
+          return sortWords([`hi`, `bye`, `low`, `high`]);
+        })
+        .then((num) => {
+          console.log(`done with chaning`);
+        })
+        .catch(handleError);
+    </script>
+  </body>
+</html>

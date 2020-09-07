@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const storm = {
+        // add code here
+        superPower: `flying`,
+        color:`blue`,
+        printSuperPower,
+        
+      };
+      const worm = {
+        // add code here
+        superPower: `speed`,
+        color:`yellow`,
+        printSuperPower,
+        
+      };
+      function printSuperPower() {
+        console.log("my superpower is " + this.color);
+        console.log("my superpower is " + this.superPower);
+      }
+      storm.printSuperPower();
+      worm.printSuperPower();
+    </script>
+  </body>
+</html>

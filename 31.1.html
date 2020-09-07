@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function wait(ms = 0) {
+        return new Promise((resolve) => {
+          setTimeout(resolve, ms);
+        });
+      }
+      const getIDs = () =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve([532, 543, 753, 1, 5]);
+          }, 1500);
+        });
+
+      async function ID() {
+        const ID = await getIDs();
+        console.log(ID);
+      }
+      ID();
+
+      const getRecipe = (recipeID) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(
+            (ID) => {
+              const recipe = {
+                title: "Fresh tomato pasta",
+                publisher: "Pinchas Hodadad",
+              };
+              resolve(`${ID}: ${recipe.title}`);
+            },
+            1500,
+            recipeID
+          );
+        });
+      };
+
+      async function getTheRecipe() {
+        const ID = await getIDs(ID);
+        console.log(`${ID}:`);
+        const recipes = getRecipe(recipeID);
+        console.log(`${recipe.title}`);
+      }
+      getTheRecipe()
+
+
+      getIDs()
+ .then((IDs) => {
+ console.log(IDs);
+ return getRecipe(IDs[2]);
+ })
+ .then((recipe) => {
+ console.log(recipe);
+ })
+ .catch((error) => {
+ console.log("It is an error!");
+ })
+    </script>
+  </body>
+</html>

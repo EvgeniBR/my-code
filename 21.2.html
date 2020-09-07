@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      img{
+        width: 256px;
+        height:256px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>click to toggle!</h2>
+    <div>
+      <button>
+        <img class="one" src="./toppng.com-light-bulb-on-off-png-512x512.png" alt="bulb" />
+        <img class="two hidden" src="./toppng.com-light-bulb-on-off-png-1024x1024.png" alt="bulb" />
+        <div class="light"></div>
+      </button>
+    </div>
+    <script>
+      let img1 = document.querySelector(".one");
+      let img2 = document.querySelector(".two");
+      let btn = document.querySelector("button");
+
+      function lightUpBulb() {
+        img1.classList.toggle(`hidden`);
+        img2.classList.toggle(`hidden`);
+      }
+
+      btn.addEventListener("click", lightUpBulb);
+    </script>
+  </body>
+</html>

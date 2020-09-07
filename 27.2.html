@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      Pokemon.prototype.callPokemon = function () {
+        return `I choose you, ${this.name}`;
+      };
+      Pokemon.prototype.attack = function () {
+        return `${this.name} used ${this.attackList}`;
+      };
+
+      function Pokemon(pokemonName, pokemonType, pokemonAttackList) {
+        this.name = pokemonName;
+        this.type = pokemonType;
+        this.attackList = pokemonAttackList;
+      }
+      // let pokemonAttackList = [
+      //   {1:`punch to the throat`},
+      //   {2:`headbut to knee`},
+      //   {3:`not very insolting insult`},
+      //   {4:`throw empty bottle`},
+      //     ]
+      let pokemonAttackList = [
+        `punch to the throat`,
+        `headbut to knee`,
+        `not very insolting insult`,
+        `throw empty bottle`,
+      ];
+      let firstPokemon = new Pokemon(`Nihachu`,`Russian`,pokemonAttackList[3]);
+
+      console.log(firstPokemon.callPokemon());
+      console.log(firstPokemon.attack());
+    </script>
+  </body>
+</html>

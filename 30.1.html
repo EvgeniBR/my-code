@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30.1</title>
+</head>
+<body>
+  <script>
+    function numbers(num){
+      return new Promise(function (resolve , reject){
+        if(num < 10){
+          reject(`Rejected`);
+        }
+        if(num >= 10){
+          resolve(`Accepted`);
+        }
+      })
+    }
+
+
+    function handleError(err) {
+      console.log('Ohh noooo!!');
+      console.log(err);
+    }
+
+    numbers(11)
+      .then(num => {
+        console.log(num);
+      }).catch(handleError)
+
+
+
+    numbers(5)
+      .then(num => {
+        console.log(num);
+      }).catch(handleError)
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .legal {
+        visibility: hidden;
+      }
+      .minor {
+        visibility: hidden;
+      } */
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="number"> How old are you?</label>
+      <input class="age" type="number" max="120" min="1" /><br />
+      <input class="btn" type="button" value="Submit" />
+    </form>
+    <span class="legal"></span>
+    <span class="minor"></span>
+
+    <script>
+      const btn = document.querySelector(`.btn`);
+      const legal = document.querySelector(`.legal`);
+      const minor = document.querySelector(`.minor`);
+      let age = document.querySelector(`.age`).value;
+      //`````````````//`````````//````````````//`````````````//``//``/``/`/`
+      function checkValue() {
+        legal.innerHTML="";
+        minor.innerHTML="";
+        age = document.querySelector(`.age`).value;
+        if (age >= 18) {
+          legal.textContent = `you can drink `;
+        } else {
+          minor.textContent = `you’re too young `;
+        }
+      }
+      btn.addEventListener("click", checkValue);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="stopwatch"><span class="minuts">00</span><span>:</span><span class="seconds">00</span><span>:</span><span class="miliseconds">00</span></div>
+<div class="buttons"><button class="start">start</button><button class="stop">pause</button></div>
+
+<script>
+  let currentMinut = document.querySelector(`.minuts`);
+  let currentSecond = document.querySelector(`.seconds`);
+  let currentMilisecond = document.querySelector(`.miliseconds`);
+  let startButton = document.querySelector(`.start`);
+  let stopButton = document.querySelector(`.stop`);
+
+
+    function runStopWatch(){
+  currentMilisecond.textContent = parseInt(currentMilisecond.textContent) +1;
+  
+  if(parseInt(currentMilisecond.textContent) === 59 ){
+        currentSecond.textContent = parseInt(currentSecond.textContent) +1;
+        currentMilisecond.textContent = 00;
+  }
+  if(parseInt(currentSecond.textContent) === 60 ){
+    currentMinut.textContent = parseInt(currentMinut.textContent) +1;
+    currentSecond.textContent = 0;
+  }
+  if(parseInt(currentMinut.textContent) === 60 ){
+    
+    currentMinut.textContent = 0;
+  }
+  }
+
+  let watch;
+
+
+  startButton.addEventListener(`click`,function (){
+    watch = setInterval(runStopWatch , 10)
+  });
+  stopButton.addEventListener(`click`,function (){
+          console.log(`kill`);
+          clearInterval(watch);
+        });
+</script>
+        
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .image {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="checkbox">check me to see me</label>
+    <input type="checkbox" name="checkbox" id="checkbox" autocomplete="off" />
+    <br />
+    <img class="image" src="https://picsum.photos/500" alt="cool pic" />
+    <script>
+      const checkbox = document.querySelector('[name="checkbox"]');
+      let img = document.querySelector(`.image`);
+
+      checkbox.addEventListener("change", function (event) {
+        if (this.checked) {
+          img.classList.toggle(`image`);
+          console.log(`hihih`);
+        } else {
+          img.classList.toggle(`image`);
+        }
+      });
+    </script>
+  </body>
+</html>

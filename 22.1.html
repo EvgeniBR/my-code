@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <form name="form">
+        <label for="name">Name:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter you name"
+        /><br />
+        <label for="age">Age:</label><br />
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="12"
+          max="99"
+          value="18"
+        /><br />
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter you Email"
+        />
+        <hr />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      const Form = document.querySelector('[name="form"]');
+
+      Form.addEventListener("submit", function (event) {
+        const name = event.currentTarget.name.value;
+        const age = event.currentTarget.age.value;
+        const email = event.currentTarget.email.value;
+
+        const shouldConfirmData = confirm(
+          `Your name is ${name}.
+     You are ${age} years old
+     Your email is${email}
+     `
+        );
+        if (!shouldConfirmData) {
+          alert(`You may change the information`);
+          event.preventDefault();
+        } else {
+          alert(`congratulations you successfully sent this form`);
+        }
+      });
+    </script>
+  </body>
+</html>

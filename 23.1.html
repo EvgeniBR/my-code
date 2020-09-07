@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<p><span class="hours"></span><span class="minutes"></span><span class="seconds"></span></p>
+
+  <script>
+let currentMinut = document.querySelector(`.minutes`);
+let currentHour = document.querySelector(`.hours`);
+let currentSecond = document.querySelector(`.seconds`);
+
+function getTime(){    
+let hh = new Date();
+let hour = [hh.getHours()];
+
+let mm = new Date();
+let minut = [mm.getMinutes()];
+
+let ss = new Date();
+let second = [mm.getSeconds()];
+
+currentHour.textContent = `${hour}:`;
+currentMinut.textContent = `${minut}:`;
+currentSecond.textContent = `${second}`;
+
+}
+
+setInterval (getTime , 1000);
+  </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let creatAgent =  {
+     name : `default`,
+     lastname :`default`,
+      greet : function (){
+        return `The name is ${this.lastname} `
+      },
+      greet2 : function (){
+        return`${setTimeout(function() {console.log(this.name);}, 3000)}`
+      } 
+    }
+    let agent = Object.create(creatAgent);
+    agent.name = `James`;
+    agent.lastname = `Bond`;
+
+    const agentBind = creatAgent.greet2.bind(creatAgent);
+    console.log(agent.greet());
+    console.log(agent.greet2(agentBind));
+
+  </script>
+</body>
+</html>
